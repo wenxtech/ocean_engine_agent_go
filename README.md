@@ -77,7 +77,8 @@ All URIs are relative to *https://agent.oceanengine.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AgentTicketListV2API* | [**AgentTicketListV2Post**](docs/AgentTicketListV2API.md#agentticketlistv2post) | **Post** /agent/ticket/list/V2 | 工单
+*AgentTicketListV2API* | [**AgentTicketListV2Post**](docs/AgentTicketListV2API.md#agentticketlistv2post) | **Post** /agent/ticket/list/V2 | 工单列表
+*CgCsrfTokenAPI* | [**CgCsrfTokenGet**](docs/CgCsrfTokenAPI.md#cgcsrftokenget) | **Get** /cg-csrf-token | 获取CgCsrfToken
 
 
 ## Documentation For Models
@@ -85,6 +86,7 @@ Class | Method | HTTP request | Description
  - [AgentTicketListV2Response](docs/AgentTicketListV2Response.md)
  - [AgentTicketListV2ResponseData](docs/AgentTicketListV2ResponseData.md)
  - [AgentTicketListV2ResponseDataDataInner](docs/AgentTicketListV2ResponseDataDataInner.md)
+ - [CgCsrfTokenResponse](docs/CgCsrfTokenResponse.md)
  - [TicketApp](docs/TicketApp.md)
 
 

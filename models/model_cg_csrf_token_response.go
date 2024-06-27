@@ -10,11 +10,12 @@ API version: 1.0.0
 
 package models
 
-// AgentTicketListV2Response struct for AgentTicketListV2Response
-type AgentTicketListV2Response struct {
+// CgCsrfTokenResponse struct for CgCsrfTokenResponse
+type CgCsrfTokenResponse struct {
 	Code *int64 `json:"code,omitempty"`
-	Msg *string `json:"msg,omitempty"`
-	Data *AgentTicketListV2ResponseData `json:"data,omitempty"`
+	Token *string `json:"token,omitempty"`
+	CsrfCode *string `json:"csrf_code,omitempty"`
+	CsrfMessage *string `json:"csrf_message,omitempty"`
 }
 
 

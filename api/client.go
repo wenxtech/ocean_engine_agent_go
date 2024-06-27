@@ -51,6 +51,8 @@ type APIClient struct {
 	// API Services
 
 	AgentTicketListV2API *AgentTicketListV2APIService
+
+	CgCsrfTokenAPI *CgCsrfTokenAPIService
     CommonApi *CommonApiService
 }
 
@@ -71,6 +73,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 
 	// API Services
 	c.AgentTicketListV2API = (*AgentTicketListV2APIService)(&c.common)
+	c.CgCsrfTokenAPI = (*CgCsrfTokenAPIService)(&c.common)
 	c.CommonApi = (*CommonApiService)(&c.common)
 
 	return c

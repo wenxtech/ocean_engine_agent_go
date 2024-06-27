@@ -12,34 +12,32 @@ package models
 
 // AgentTicketListV2ResponseDataDataInner struct for AgentTicketListV2ResponseDataDataInner
 type AgentTicketListV2ResponseDataDataInner struct {
-	TicketId int32 `json:"ticketId"`
-	TicketSubject NullableString `json:"ticketSubject"`
-	TicketStatus string `json:"ticketStatus"`
-	TemplateName string `json:"templateName"`
-	CreatorName string `json:"creatorName"`
-	CreateTime string `json:"createTime"`
-	UpdateTime string `json:"updateTime"`
-	CurrentProcessPersons []string `json:"currentProcessPersons"`
-	TaskName string `json:"taskName"`
-	AdvId NullableInt32 `json:"advId"`
-	AdvName NullableString `json:"advName"`
-	AgentName string `json:"agentName"`
-	AgentId int32 `json:"agentId"`
-	AgentCompanyName string `json:"agentCompanyName"`
-	AgentCompanyId int32 `json:"agentCompanyId"`
-	SalesName string `json:"salesName"`
-	SalesDepId int32 `json:"salesDepId"`
-	SalesDepName string `json:"salesDepName"`
-	ProcessPersons []string `json:"processPersons"`
-	TicketStatusName string `json:"ticketStatusName"`
-	TicketApp string `json:"ticketApp"`
-	AgentSalesId int32 `json:"agentSalesId"`
-	AgentSalesName string `json:"agentSalesName"`
-	OptimizerId NullableInt32 `json:"optimizerId"`
-	OptimizerName NullableString `json:"optimizerName"`
-	AthenaOrderId string `json:"athenaOrderId"`
+	TicketId *int64 `json:"ticketId,omitempty"`
+	TicketSubject *string `json:"ticketSubject,omitempty"`
+	TicketStatus *string `json:"ticketStatus,omitempty"`
+	TemplateName *string `json:"templateName,omitempty"`
+	CreatorName *string `json:"creatorName,omitempty"`
+	CreateTime *string `json:"createTime,omitempty"`
+	UpdateTime *string `json:"updateTime,omitempty"`
+	CurrentProcessPersons []string `json:"currentProcessPersons,omitempty"`
+	TaskName *string `json:"taskName,omitempty"`
+	AdvId *int64 `json:"advId,omitempty"`
+	AdvName *string `json:"advName,omitempty"`
+	AgentName *string `json:"agentName,omitempty"`
+	AgentId *int64 `json:"agentId,omitempty"`
+	AgentCompanyName *string `json:"agentCompanyName,omitempty"`
+	AgentCompanyId *int64 `json:"agentCompanyId,omitempty"`
+	SalesName *string `json:"salesName,omitempty"`
+	SalesDepId *int64 `json:"salesDepId,omitempty"`
+	SalesDepName *string `json:"salesDepName,omitempty"`
+	ProcessPersons []string `json:"processPersons,omitempty"`
+	TicketStatusName *string `json:"ticketStatusName,omitempty"`
+	TicketApp *string `json:"ticketApp,omitempty"`
+	AgentSalesId *int64 `json:"agentSalesId,omitempty"`
+	AgentSalesName *string `json:"agentSalesName,omitempty"`
+	OptimizerId *int64 `json:"optimizerId,omitempty"`
+	OptimizerName *string `json:"optimizerName,omitempty"`
+	AthenaOrderId *string `json:"athenaOrderId,omitempty"`
 }
-
-type _AgentTicketListV2ResponseDataDataInner AgentTicketListV2ResponseDataDataInner
 
 

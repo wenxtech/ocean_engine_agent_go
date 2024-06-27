@@ -12,10 +12,8 @@ package models
 
 // AgentTicketListV2ResponseData struct for AgentTicketListV2ResponseData
 type AgentTicketListV2ResponseData struct {
-	Total int32 `json:"total"`
-	Data []AgentTicketListV2ResponseDataDataInner `json:"data"`
+	Total *int64 `json:"total,omitempty"`
+	Data []AgentTicketListV2ResponseDataDataInner `json:"data,omitempty"`
 }
-
-type _AgentTicketListV2ResponseData AgentTicketListV2ResponseData
 
 

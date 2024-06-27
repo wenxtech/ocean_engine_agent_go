@@ -36,6 +36,9 @@ func Init(cfg *api.Configuration) *Client {
 func (c *Client) AgentTicketListV2API() *api.AgentTicketListV2APIService {
 	return c.ApiClient.AgentTicketListV2API
 }
+func (c *Client) CgCsrfTokenAPI() *api.CgCsrfTokenAPIService {
+	return c.ApiClient.CgCsrfTokenAPI
+}
 
 func (c *Client) CommonApi() *api.CommonApiService {
 	return c.ApiClient.CommonApi

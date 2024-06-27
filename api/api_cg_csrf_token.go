@@ -20,87 +20,51 @@ import (
 )
 
 
-// AgentTicketListV2APIService AgentTicketListV2API service
-type AgentTicketListV2APIService service
+// CgCsrfTokenAPIService CgCsrfTokenAPI service
+type CgCsrfTokenAPIService service
 
-type ApiAgentTicketListV2PostRequest struct {
+type ApiCgCsrfTokenGetRequest struct {
 	ctx context.Context
-	ApiService *AgentTicketListV2APIService
-	page *string
-	ticketApp *string
-	createTimeStart *string
-	createTimeEnd *string
-	size *string
-	ticketTabType *string
+	ApiService *CgCsrfTokenAPIService
 }
 
-func (r ApiAgentTicketListV2PostRequest) Page(page string) ApiAgentTicketListV2PostRequest {
-	r.page = &page
-	return r
-}
-
-func (r ApiAgentTicketListV2PostRequest) TicketApp(ticketApp string) ApiAgentTicketListV2PostRequest {
-	r.ticketApp = &ticketApp
-	return r
-}
-
-func (r ApiAgentTicketListV2PostRequest) CreateTimeStart(createTimeStart string) ApiAgentTicketListV2PostRequest {
-	r.createTimeStart = &createTimeStart
-	return r
-}
-
-func (r ApiAgentTicketListV2PostRequest) CreateTimeEnd(createTimeEnd string) ApiAgentTicketListV2PostRequest {
-	r.createTimeEnd = &createTimeEnd
-	return r
-}
-
-func (r ApiAgentTicketListV2PostRequest) Size(size string) ApiAgentTicketListV2PostRequest {
-	r.size = &size
-	return r
-}
-
-func (r ApiAgentTicketListV2PostRequest) TicketTabType(ticketTabType string) ApiAgentTicketListV2PostRequest {
-	r.ticketTabType = &ticketTabType
-	return r
-}
-
-func (r ApiAgentTicketListV2PostRequest) Execute() (*AgentTicketListV2Response, *http.Response, error) {
-	return r.ApiService.AgentTicketListV2PostExecute(r)
+func (r ApiCgCsrfTokenGetRequest) Execute() (*CgCsrfTokenResponse, *http.Response, error) {
+	return r.ApiService.CgCsrfTokenGetExecute(r)
 }
 
 /*
-AgentTicketListV2Post 工单列表
+CgCsrfTokenGet 获取CgCsrfToken
 
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAgentTicketListV2PostRequest
+ @return ApiCgCsrfTokenGetRequest
 */
-func (a *AgentTicketListV2APIService) AgentTicketListV2Post(ctx context.Context) ApiAgentTicketListV2PostRequest {
-	return ApiAgentTicketListV2PostRequest{
+func (a *CgCsrfTokenAPIService) CgCsrfTokenGet(ctx context.Context) ApiCgCsrfTokenGetRequest {
+	return ApiCgCsrfTokenGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AgentTicketListV2Response
-func (a *AgentTicketListV2APIService) AgentTicketListV2PostExecute(r ApiAgentTicketListV2PostRequest) (*AgentTicketListV2Response, *http.Response, error) {
+//  @return CgCsrfTokenResponse
+func (a *CgCsrfTokenAPIService) CgCsrfTokenGetExecute(r ApiCgCsrfTokenGetRequest) (*CgCsrfTokenResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
+		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []FormFile
-		localVarReturnValue  *AgentTicketListV2Response
+		localVarReturnValue  *CgCsrfTokenResponse
 	)
 	
 	r.ctx = a.client.prepareCtx(r.ctx)
 
-	localBasePath, err := a.client.Cfg.ServerURLWithContext(r.ctx, "AgentTicketListV2APIService.AgentTicketListV2Post")
+	localBasePath, err := a.client.Cfg.ServerURLWithContext(r.ctx, "CgCsrfTokenAPIService.CgCsrfTokenGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/agent/ticket/list/V2"
+	localVarPath := localBasePath + "/cg-csrf-token"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -122,24 +86,6 @@ func (a *AgentTicketListV2APIService) AgentTicketListV2PostExecute(r ApiAgentTic
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "page", r.page, "")
-	}
-	if r.ticketApp != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "ticketApp", r.ticketApp, "")
-	}
-	if r.createTimeStart != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "createTimeStart", r.createTimeStart, "")
-	}
-	if r.createTimeEnd != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "createTimeEnd", r.createTimeEnd, "")
-	}
-	if r.size != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "size", r.size, "")
-	}
-	if r.ticketTabType != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "ticketTabType", r.ticketTabType, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

@@ -4,38 +4,38 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TicketId** | **int32** |  | 
-**TicketSubject** | **NullableString** |  | 
-**TicketStatus** | **string** |  | 
-**TemplateName** | **string** |  | 
-**CreatorName** | **string** |  | 
-**CreateTime** | **string** |  | 
-**UpdateTime** | **string** |  | 
-**CurrentProcessPersons** | **[]string** |  | 
-**TaskName** | **string** |  | 
-**AdvId** | **NullableInt32** |  | 
-**AdvName** | **NullableString** |  | 
-**AgentName** | **string** |  | 
-**AgentId** | **int32** |  | 
-**AgentCompanyName** | **string** |  | 
-**AgentCompanyId** | **int32** |  | 
-**SalesName** | **string** |  | 
-**SalesDepId** | **int32** |  | 
-**SalesDepName** | **string** |  | 
-**ProcessPersons** | **[]string** |  | 
-**TicketStatusName** | **string** |  | 
-**TicketApp** | **string** |  | 
-**AgentSalesId** | **int32** |  | 
-**AgentSalesName** | **string** |  | 
-**OptimizerId** | **NullableInt32** |  | 
-**OptimizerName** | **NullableString** |  | 
-**AthenaOrderId** | **string** |  | 
+**TicketId** | Pointer to **int64** |  | [optional] 
+**TicketSubject** | Pointer to **string** |  | [optional] 
+**TicketStatus** | Pointer to **string** |  | [optional] 
+**TemplateName** | Pointer to **string** |  | [optional] 
+**CreatorName** | Pointer to **string** |  | [optional] 
+**CreateTime** | Pointer to **string** |  | [optional] 
+**UpdateTime** | Pointer to **string** |  | [optional] 
+**CurrentProcessPersons** | Pointer to **[]string** |  | [optional] 
+**TaskName** | Pointer to **string** |  | [optional] 
+**AdvId** | Pointer to **int64** |  | [optional] 
+**AdvName** | Pointer to **string** |  | [optional] 
+**AgentName** | Pointer to **string** |  | [optional] 
+**AgentId** | Pointer to **int64** |  | [optional] 
+**AgentCompanyName** | Pointer to **string** |  | [optional] 
+**AgentCompanyId** | Pointer to **int64** |  | [optional] 
+**SalesName** | Pointer to **string** |  | [optional] 
+**SalesDepId** | Pointer to **int64** |  | [optional] 
+**SalesDepName** | Pointer to **string** |  | [optional] 
+**ProcessPersons** | Pointer to **[]string** |  | [optional] 
+**TicketStatusName** | Pointer to **string** |  | [optional] 
+**TicketApp** | Pointer to **string** |  | [optional] 
+**AgentSalesId** | Pointer to **int64** |  | [optional] 
+**AgentSalesName** | Pointer to **string** |  | [optional] 
+**OptimizerId** | Pointer to **int64** |  | [optional] 
+**OptimizerName** | Pointer to **string** |  | [optional] 
+**AthenaOrderId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewAgentTicketListV2ResponseDataDataInner
 
-`func NewAgentTicketListV2ResponseDataDataInner(ticketId int32, ticketSubject NullableString, ticketStatus string, templateName string, creatorName string, createTime string, updateTime string, currentProcessPersons []string, taskName string, advId NullableInt32, advName NullableString, agentName string, agentId int32, agentCompanyName string, agentCompanyId int32, salesName string, salesDepId int32, salesDepName string, processPersons []string, ticketStatusName string, ticketApp string, agentSalesId int32, agentSalesName string, optimizerId NullableInt32, optimizerName NullableString, athenaOrderId string, ) *AgentTicketListV2ResponseDataDataInner`
+`func NewAgentTicketListV2ResponseDataDataInner() *AgentTicketListV2ResponseDataDataInner`
 
 NewAgentTicketListV2ResponseDataDataInner instantiates a new AgentTicketListV2ResponseDataDataInner object
 This constructor will assign default values to properties that have it defined,
@@ -52,23 +52,28 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTicketId
 
-`func (o *AgentTicketListV2ResponseDataDataInner) GetTicketId() int32`
+`func (o *AgentTicketListV2ResponseDataDataInner) GetTicketId() int64`
 
 GetTicketId returns the TicketId field if non-nil, zero value otherwise.
 
 ### GetTicketIdOk
 
-`func (o *AgentTicketListV2ResponseDataDataInner) GetTicketIdOk() (*int32, bool)`
+`func (o *AgentTicketListV2ResponseDataDataInner) GetTicketIdOk() (*int64, bool)`
 
 GetTicketIdOk returns a tuple with the TicketId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTicketId
 
-`func (o *AgentTicketListV2ResponseDataDataInner) SetTicketId(v int32)`
+`func (o *AgentTicketListV2ResponseDataDataInner) SetTicketId(v int64)`
 
 SetTicketId sets TicketId field to given value.
 
+### HasTicketId
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasTicketId() bool`
+
+HasTicketId returns a boolean if a field has been set.
 
 ### GetTicketSubject
 
@@ -89,17 +94,12 @@ and a boolean to check if the value has been set.
 
 SetTicketSubject sets TicketSubject field to given value.
 
+### HasTicketSubject
 
-### SetTicketSubjectNil
+`func (o *AgentTicketListV2ResponseDataDataInner) HasTicketSubject() bool`
 
-`func (o *AgentTicketListV2ResponseDataDataInner) SetTicketSubjectNil(b bool)`
+HasTicketSubject returns a boolean if a field has been set.
 
- SetTicketSubjectNil sets the value for TicketSubject to be an explicit nil
-
-### UnsetTicketSubject
-`func (o *AgentTicketListV2ResponseDataDataInner) UnsetTicketSubject()`
-
-UnsetTicketSubject ensures that no value is present for TicketSubject, not even an explicit nil
 ### GetTicketStatus
 
 `func (o *AgentTicketListV2ResponseDataDataInner) GetTicketStatus() string`
@@ -119,6 +119,11 @@ and a boolean to check if the value has been set.
 
 SetTicketStatus sets TicketStatus field to given value.
 
+### HasTicketStatus
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasTicketStatus() bool`
+
+HasTicketStatus returns a boolean if a field has been set.
 
 ### GetTemplateName
 
@@ -139,6 +144,11 @@ and a boolean to check if the value has been set.
 
 SetTemplateName sets TemplateName field to given value.
 
+### HasTemplateName
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasTemplateName() bool`
+
+HasTemplateName returns a boolean if a field has been set.
 
 ### GetCreatorName
 
@@ -159,6 +169,11 @@ and a boolean to check if the value has been set.
 
 SetCreatorName sets CreatorName field to given value.
 
+### HasCreatorName
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasCreatorName() bool`
+
+HasCreatorName returns a boolean if a field has been set.
 
 ### GetCreateTime
 
@@ -179,6 +194,11 @@ and a boolean to check if the value has been set.
 
 SetCreateTime sets CreateTime field to given value.
 
+### HasCreateTime
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasCreateTime() bool`
+
+HasCreateTime returns a boolean if a field has been set.
 
 ### GetUpdateTime
 
@@ -199,6 +219,11 @@ and a boolean to check if the value has been set.
 
 SetUpdateTime sets UpdateTime field to given value.
 
+### HasUpdateTime
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasUpdateTime() bool`
+
+HasUpdateTime returns a boolean if a field has been set.
 
 ### GetCurrentProcessPersons
 
@@ -219,6 +244,11 @@ and a boolean to check if the value has been set.
 
 SetCurrentProcessPersons sets CurrentProcessPersons field to given value.
 
+### HasCurrentProcessPersons
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasCurrentProcessPersons() bool`
+
+HasCurrentProcessPersons returns a boolean if a field has been set.
 
 ### GetTaskName
 
@@ -239,37 +269,37 @@ and a boolean to check if the value has been set.
 
 SetTaskName sets TaskName field to given value.
 
+### HasTaskName
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasTaskName() bool`
+
+HasTaskName returns a boolean if a field has been set.
 
 ### GetAdvId
 
-`func (o *AgentTicketListV2ResponseDataDataInner) GetAdvId() int32`
+`func (o *AgentTicketListV2ResponseDataDataInner) GetAdvId() int64`
 
 GetAdvId returns the AdvId field if non-nil, zero value otherwise.
 
 ### GetAdvIdOk
 
-`func (o *AgentTicketListV2ResponseDataDataInner) GetAdvIdOk() (*int32, bool)`
+`func (o *AgentTicketListV2ResponseDataDataInner) GetAdvIdOk() (*int64, bool)`
 
 GetAdvIdOk returns a tuple with the AdvId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAdvId
 
-`func (o *AgentTicketListV2ResponseDataDataInner) SetAdvId(v int32)`
+`func (o *AgentTicketListV2ResponseDataDataInner) SetAdvId(v int64)`
 
 SetAdvId sets AdvId field to given value.
 
+### HasAdvId
 
-### SetAdvIdNil
+`func (o *AgentTicketListV2ResponseDataDataInner) HasAdvId() bool`
 
-`func (o *AgentTicketListV2ResponseDataDataInner) SetAdvIdNil(b bool)`
+HasAdvId returns a boolean if a field has been set.
 
- SetAdvIdNil sets the value for AdvId to be an explicit nil
-
-### UnsetAdvId
-`func (o *AgentTicketListV2ResponseDataDataInner) UnsetAdvId()`
-
-UnsetAdvId ensures that no value is present for AdvId, not even an explicit nil
 ### GetAdvName
 
 `func (o *AgentTicketListV2ResponseDataDataInner) GetAdvName() string`
@@ -289,17 +319,12 @@ and a boolean to check if the value has been set.
 
 SetAdvName sets AdvName field to given value.
 
+### HasAdvName
 
-### SetAdvNameNil
+`func (o *AgentTicketListV2ResponseDataDataInner) HasAdvName() bool`
 
-`func (o *AgentTicketListV2ResponseDataDataInner) SetAdvNameNil(b bool)`
+HasAdvName returns a boolean if a field has been set.
 
- SetAdvNameNil sets the value for AdvName to be an explicit nil
-
-### UnsetAdvName
-`func (o *AgentTicketListV2ResponseDataDataInner) UnsetAdvName()`
-
-UnsetAdvName ensures that no value is present for AdvName, not even an explicit nil
 ### GetAgentName
 
 `func (o *AgentTicketListV2ResponseDataDataInner) GetAgentName() string`
@@ -319,26 +344,36 @@ and a boolean to check if the value has been set.
 
 SetAgentName sets AgentName field to given value.
 
+### HasAgentName
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasAgentName() bool`
+
+HasAgentName returns a boolean if a field has been set.
 
 ### GetAgentId
 
-`func (o *AgentTicketListV2ResponseDataDataInner) GetAgentId() int32`
+`func (o *AgentTicketListV2ResponseDataDataInner) GetAgentId() int64`
 
 GetAgentId returns the AgentId field if non-nil, zero value otherwise.
 
 ### GetAgentIdOk
 
-`func (o *AgentTicketListV2ResponseDataDataInner) GetAgentIdOk() (*int32, bool)`
+`func (o *AgentTicketListV2ResponseDataDataInner) GetAgentIdOk() (*int64, bool)`
 
 GetAgentIdOk returns a tuple with the AgentId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAgentId
 
-`func (o *AgentTicketListV2ResponseDataDataInner) SetAgentId(v int32)`
+`func (o *AgentTicketListV2ResponseDataDataInner) SetAgentId(v int64)`
 
 SetAgentId sets AgentId field to given value.
 
+### HasAgentId
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasAgentId() bool`
+
+HasAgentId returns a boolean if a field has been set.
 
 ### GetAgentCompanyName
 
@@ -359,26 +394,36 @@ and a boolean to check if the value has been set.
 
 SetAgentCompanyName sets AgentCompanyName field to given value.
 
+### HasAgentCompanyName
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasAgentCompanyName() bool`
+
+HasAgentCompanyName returns a boolean if a field has been set.
 
 ### GetAgentCompanyId
 
-`func (o *AgentTicketListV2ResponseDataDataInner) GetAgentCompanyId() int32`
+`func (o *AgentTicketListV2ResponseDataDataInner) GetAgentCompanyId() int64`
 
 GetAgentCompanyId returns the AgentCompanyId field if non-nil, zero value otherwise.
 
 ### GetAgentCompanyIdOk
 
-`func (o *AgentTicketListV2ResponseDataDataInner) GetAgentCompanyIdOk() (*int32, bool)`
+`func (o *AgentTicketListV2ResponseDataDataInner) GetAgentCompanyIdOk() (*int64, bool)`
 
 GetAgentCompanyIdOk returns a tuple with the AgentCompanyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAgentCompanyId
 
-`func (o *AgentTicketListV2ResponseDataDataInner) SetAgentCompanyId(v int32)`
+`func (o *AgentTicketListV2ResponseDataDataInner) SetAgentCompanyId(v int64)`
 
 SetAgentCompanyId sets AgentCompanyId field to given value.
 
+### HasAgentCompanyId
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasAgentCompanyId() bool`
+
+HasAgentCompanyId returns a boolean if a field has been set.
 
 ### GetSalesName
 
@@ -399,26 +444,36 @@ and a boolean to check if the value has been set.
 
 SetSalesName sets SalesName field to given value.
 
+### HasSalesName
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasSalesName() bool`
+
+HasSalesName returns a boolean if a field has been set.
 
 ### GetSalesDepId
 
-`func (o *AgentTicketListV2ResponseDataDataInner) GetSalesDepId() int32`
+`func (o *AgentTicketListV2ResponseDataDataInner) GetSalesDepId() int64`
 
 GetSalesDepId returns the SalesDepId field if non-nil, zero value otherwise.
 
 ### GetSalesDepIdOk
 
-`func (o *AgentTicketListV2ResponseDataDataInner) GetSalesDepIdOk() (*int32, bool)`
+`func (o *AgentTicketListV2ResponseDataDataInner) GetSalesDepIdOk() (*int64, bool)`
 
 GetSalesDepIdOk returns a tuple with the SalesDepId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSalesDepId
 
-`func (o *AgentTicketListV2ResponseDataDataInner) SetSalesDepId(v int32)`
+`func (o *AgentTicketListV2ResponseDataDataInner) SetSalesDepId(v int64)`
 
 SetSalesDepId sets SalesDepId field to given value.
 
+### HasSalesDepId
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasSalesDepId() bool`
+
+HasSalesDepId returns a boolean if a field has been set.
 
 ### GetSalesDepName
 
@@ -439,6 +494,11 @@ and a boolean to check if the value has been set.
 
 SetSalesDepName sets SalesDepName field to given value.
 
+### HasSalesDepName
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasSalesDepName() bool`
+
+HasSalesDepName returns a boolean if a field has been set.
 
 ### GetProcessPersons
 
@@ -459,6 +519,11 @@ and a boolean to check if the value has been set.
 
 SetProcessPersons sets ProcessPersons field to given value.
 
+### HasProcessPersons
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasProcessPersons() bool`
+
+HasProcessPersons returns a boolean if a field has been set.
 
 ### GetTicketStatusName
 
@@ -479,6 +544,11 @@ and a boolean to check if the value has been set.
 
 SetTicketStatusName sets TicketStatusName field to given value.
 
+### HasTicketStatusName
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasTicketStatusName() bool`
+
+HasTicketStatusName returns a boolean if a field has been set.
 
 ### GetTicketApp
 
@@ -499,26 +569,36 @@ and a boolean to check if the value has been set.
 
 SetTicketApp sets TicketApp field to given value.
 
+### HasTicketApp
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasTicketApp() bool`
+
+HasTicketApp returns a boolean if a field has been set.
 
 ### GetAgentSalesId
 
-`func (o *AgentTicketListV2ResponseDataDataInner) GetAgentSalesId() int32`
+`func (o *AgentTicketListV2ResponseDataDataInner) GetAgentSalesId() int64`
 
 GetAgentSalesId returns the AgentSalesId field if non-nil, zero value otherwise.
 
 ### GetAgentSalesIdOk
 
-`func (o *AgentTicketListV2ResponseDataDataInner) GetAgentSalesIdOk() (*int32, bool)`
+`func (o *AgentTicketListV2ResponseDataDataInner) GetAgentSalesIdOk() (*int64, bool)`
 
 GetAgentSalesIdOk returns a tuple with the AgentSalesId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAgentSalesId
 
-`func (o *AgentTicketListV2ResponseDataDataInner) SetAgentSalesId(v int32)`
+`func (o *AgentTicketListV2ResponseDataDataInner) SetAgentSalesId(v int64)`
 
 SetAgentSalesId sets AgentSalesId field to given value.
 
+### HasAgentSalesId
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasAgentSalesId() bool`
+
+HasAgentSalesId returns a boolean if a field has been set.
 
 ### GetAgentSalesName
 
@@ -539,37 +619,37 @@ and a boolean to check if the value has been set.
 
 SetAgentSalesName sets AgentSalesName field to given value.
 
+### HasAgentSalesName
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasAgentSalesName() bool`
+
+HasAgentSalesName returns a boolean if a field has been set.
 
 ### GetOptimizerId
 
-`func (o *AgentTicketListV2ResponseDataDataInner) GetOptimizerId() int32`
+`func (o *AgentTicketListV2ResponseDataDataInner) GetOptimizerId() int64`
 
 GetOptimizerId returns the OptimizerId field if non-nil, zero value otherwise.
 
 ### GetOptimizerIdOk
 
-`func (o *AgentTicketListV2ResponseDataDataInner) GetOptimizerIdOk() (*int32, bool)`
+`func (o *AgentTicketListV2ResponseDataDataInner) GetOptimizerIdOk() (*int64, bool)`
 
 GetOptimizerIdOk returns a tuple with the OptimizerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOptimizerId
 
-`func (o *AgentTicketListV2ResponseDataDataInner) SetOptimizerId(v int32)`
+`func (o *AgentTicketListV2ResponseDataDataInner) SetOptimizerId(v int64)`
 
 SetOptimizerId sets OptimizerId field to given value.
 
+### HasOptimizerId
 
-### SetOptimizerIdNil
+`func (o *AgentTicketListV2ResponseDataDataInner) HasOptimizerId() bool`
 
-`func (o *AgentTicketListV2ResponseDataDataInner) SetOptimizerIdNil(b bool)`
+HasOptimizerId returns a boolean if a field has been set.
 
- SetOptimizerIdNil sets the value for OptimizerId to be an explicit nil
-
-### UnsetOptimizerId
-`func (o *AgentTicketListV2ResponseDataDataInner) UnsetOptimizerId()`
-
-UnsetOptimizerId ensures that no value is present for OptimizerId, not even an explicit nil
 ### GetOptimizerName
 
 `func (o *AgentTicketListV2ResponseDataDataInner) GetOptimizerName() string`
@@ -589,17 +669,12 @@ and a boolean to check if the value has been set.
 
 SetOptimizerName sets OptimizerName field to given value.
 
+### HasOptimizerName
 
-### SetOptimizerNameNil
+`func (o *AgentTicketListV2ResponseDataDataInner) HasOptimizerName() bool`
 
-`func (o *AgentTicketListV2ResponseDataDataInner) SetOptimizerNameNil(b bool)`
+HasOptimizerName returns a boolean if a field has been set.
 
- SetOptimizerNameNil sets the value for OptimizerName to be an explicit nil
-
-### UnsetOptimizerName
-`func (o *AgentTicketListV2ResponseDataDataInner) UnsetOptimizerName()`
-
-UnsetOptimizerName ensures that no value is present for OptimizerName, not even an explicit nil
 ### GetAthenaOrderId
 
 `func (o *AgentTicketListV2ResponseDataDataInner) GetAthenaOrderId() string`
@@ -619,6 +694,11 @@ and a boolean to check if the value has been set.
 
 SetAthenaOrderId sets AthenaOrderId field to given value.
 
+### HasAthenaOrderId
+
+`func (o *AgentTicketListV2ResponseDataDataInner) HasAthenaOrderId() bool`
+
+HasAthenaOrderId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
