@@ -76,7 +76,7 @@ AgentTicketListV2Post 工单列表
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiAgentTicketListV2PostRequest
 */
-func (a *AgentTicketListV2APIService) AgentTicketListV2Post(ctx context.Context) ApiAgentTicketListV2PostRequest {
+func (a *AgentTicketListV2APIService) Post(ctx context.Context) ApiAgentTicketListV2PostRequest {
 	return ApiAgentTicketListV2PostRequest{
 		ApiService: a,
 		ctx: ctx,

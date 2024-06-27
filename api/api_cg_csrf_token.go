@@ -40,7 +40,7 @@ CgCsrfTokenGet 获取CgCsrfToken
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCgCsrfTokenGetRequest
 */
-func (a *CgCsrfTokenAPIService) CgCsrfTokenGet(ctx context.Context) ApiCgCsrfTokenGetRequest {
+func (a *CgCsrfTokenAPIService) Get(ctx context.Context) ApiCgCsrfTokenGetRequest {
 	return ApiCgCsrfTokenGetRequest{
 		ApiService: a,
 		ctx: ctx,
