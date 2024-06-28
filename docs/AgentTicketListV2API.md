@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## AgentTicketListV2Post
 
-> AgentTicketListV2Response AgentTicketListV2Post(ctx).Page(page).TicketApp(ticketApp).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Size(size).TicketTabType(ticketTabType).Execute()
+> AgentTicketListV2Response AgentTicketListV2Post(ctx).Page(page).TicketApp(ticketApp).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Size(size).TicketTabType(ticketTabType).TicketStatus(ticketStatus).Execute()
 
 工单列表
 
@@ -29,16 +29,17 @@ import (
 )
 
 func main() {
-	page := "page_example" // string |  (optional)
+	page := int64(789) // int64 |  (optional)
 	ticketApp := "ticketApp_example" // string |  (optional)
 	createTimeStart := "createTimeStart_example" // string |  (optional)
 	createTimeEnd := "createTimeEnd_example" // string |  (optional)
-	size := "size_example" // string |  (optional)
+	size := int64(789) // int64 |  (optional)
 	ticketTabType := "ticketTabType_example" // string |  (optional)
+	ticketStatus := "ticketStatus_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AgentTicketListV2API.AgentTicketListV2Post(context.Background()).Page(page).TicketApp(ticketApp).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Size(size).TicketTabType(ticketTabType).Execute()
+	resp, r, err := apiClient.AgentTicketListV2API.AgentTicketListV2Post(context.Background()).Page(page).TicketApp(ticketApp).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Size(size).TicketTabType(ticketTabType).TicketStatus(ticketStatus).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AgentTicketListV2API.AgentTicketListV2Post``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,12 +60,13 @@ Other parameters are passed through a pointer to a apiAgentTicketListV2PostReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **string** |  | 
+ **page** | **int64** |  | 
  **ticketApp** | **string** |  | 
  **createTimeStart** | **string** |  | 
  **createTimeEnd** | **string** |  | 
- **size** | **string** |  | 
+ **size** | **int64** |  | 
  **ticketTabType** | **string** |  | 
+ **ticketStatus** | **string** |  | 
 
 ### Return type
 

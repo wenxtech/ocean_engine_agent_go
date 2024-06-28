@@ -88,6 +88,7 @@ Class | Method | HTTP request | Description
  - [AgentTicketListV2ResponseDataDataInner](docs/AgentTicketListV2ResponseDataDataInner.md)
  - [CgCsrfTokenResponse](docs/CgCsrfTokenResponse.md)
  - [TicketApp](docs/TicketApp.md)
+ - [TicketStatus](docs/TicketStatus.md)
 
 
 ## Documentation For Authorization

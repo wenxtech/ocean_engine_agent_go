@@ -26,15 +26,16 @@ type AgentTicketListV2APIService service
 type ApiAgentTicketListV2PostRequest struct {
 	ctx context.Context
 	ApiService *AgentTicketListV2APIService
-	page *string
+	page *int64
 	ticketApp *string
 	createTimeStart *string
 	createTimeEnd *string
-	size *string
+	size *int64
 	ticketTabType *string
+	ticketStatus *string
 }
 
-func (r ApiAgentTicketListV2PostRequest) Page(page string) ApiAgentTicketListV2PostRequest {
+func (r ApiAgentTicketListV2PostRequest) Page(page int64) ApiAgentTicketListV2PostRequest {
 	r.page = &page
 	return r
 }
@@ -54,13 +55,18 @@ func (r ApiAgentTicketListV2PostRequest) CreateTimeEnd(createTimeEnd string) Api
 	return r
 }
 
-func (r ApiAgentTicketListV2PostRequest) Size(size string) ApiAgentTicketListV2PostRequest {
+func (r ApiAgentTicketListV2PostRequest) Size(size int64) ApiAgentTicketListV2PostRequest {
 	r.size = &size
 	return r
 }
 
 func (r ApiAgentTicketListV2PostRequest) TicketTabType(ticketTabType string) ApiAgentTicketListV2PostRequest {
 	r.ticketTabType = &ticketTabType
+	return r
+}
+
+func (r ApiAgentTicketListV2PostRequest) TicketStatus(ticketStatus string) ApiAgentTicketListV2PostRequest {
+	r.ticketStatus = &ticketStatus
 	return r
 }
 
@@ -140,6 +146,9 @@ func (a *AgentTicketListV2APIService) AgentTicketListV2PostExecute(r ApiAgentTic
 	}
 	if r.ticketTabType != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "ticketTabType", r.ticketTabType, "")
+	}
+	if r.ticketStatus != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "ticketStatus", r.ticketStatus, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
