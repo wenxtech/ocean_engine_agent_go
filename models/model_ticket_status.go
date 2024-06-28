@@ -18,11 +18,11 @@ type TicketStatus string
 
 // List of ticketStatus
 const (
-	UN_HANDLE TicketStatus = "UN_HANDLE"
-	HANDLING TicketStatus = "HANDLING"
-	HANDLED TicketStatus = "HANDLED"
-	REJECT TicketStatus = "REJECT"
-	WITHDRAW TicketStatus = "WITHDRAW"
+	UN_HANDLE_TicketStatus = "UN_HANDLE"
+	HANDLING_TicketStatus = "HANDLING"
+	HANDLED_TicketStatus = "HANDLED"
+	REJECT_TicketStatus = "REJECT"
+	WITHDRAW_TicketStatus = "WITHDRAW"
 )
 
 // All allowed values of TicketStatus enum
