@@ -19,7 +19,6 @@ type AgentTicketListV2ResponseDataDataInner struct {
 	CreatorName *string `json:"creatorName,omitempty"`
 	CreateTime *string `json:"createTime,omitempty"`
 	UpdateTime *string `json:"updateTime,omitempty"`
-	CurrentProcessPersons []string `json:"currentProcessPersons,omitempty"`
 	TaskName *string `json:"taskName,omitempty"`
 	AdvId *int64 `json:"advId,omitempty"`
 	AdvName *string `json:"advName,omitempty"`
@@ -30,13 +29,9 @@ type AgentTicketListV2ResponseDataDataInner struct {
 	SalesName *string `json:"salesName,omitempty"`
 	SalesDepId *int64 `json:"salesDepId,omitempty"`
 	SalesDepName *string `json:"salesDepName,omitempty"`
-	ProcessPersons []string `json:"processPersons,omitempty"`
 	TicketStatusName *string `json:"ticketStatusName,omitempty"`
 	TicketApp *string `json:"ticketApp,omitempty"`
 	AgentSalesId *int64 `json:"agentSalesId,omitempty"`
-	AgentSalesName *string `json:"agentSalesName,omitempty"`
-	OptimizerId *int64 `json:"optimizerId,omitempty"`
-	OptimizerName *string `json:"optimizerName,omitempty"`
 	AthenaOrderId *string `json:"athenaOrderId,omitempty"`
 }
 

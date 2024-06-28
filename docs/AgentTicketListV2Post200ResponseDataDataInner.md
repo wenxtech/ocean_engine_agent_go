@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **CreatorName** | Pointer to **string** |  | [optional] 
 **CreateTime** | Pointer to **string** |  | [optional] 
 **UpdateTime** | Pointer to **string** |  | [optional] 
-**CurrentProcessPersons** | Pointer to **[]string** |  | [optional] 
 **TaskName** | Pointer to **string** |  | [optional] 
 **AdvId** | Pointer to **int64** |  | [optional] 
 **AdvName** | Pointer to **string** |  | [optional] 
@@ -22,13 +21,9 @@ Name | Type | Description | Notes
 **SalesName** | Pointer to **string** |  | [optional] 
 **SalesDepId** | Pointer to **int64** |  | [optional] 
 **SalesDepName** | Pointer to **string** |  | [optional] 
-**ProcessPersons** | Pointer to **[]string** |  | [optional] 
 **TicketStatusName** | Pointer to **string** |  | [optional] 
 **TicketApp** | Pointer to **string** |  | [optional] 
 **AgentSalesId** | Pointer to **int64** |  | [optional] 
-**AgentSalesName** | Pointer to **string** |  | [optional] 
-**OptimizerId** | Pointer to **int64** |  | [optional] 
-**OptimizerName** | Pointer to **string** |  | [optional] 
 **AthenaOrderId** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -224,31 +219,6 @@ SetUpdateTime sets UpdateTime field to given value.
 `func (o *AgentTicketListV2ResponseDataDataInner) HasUpdateTime() bool`
 
 HasUpdateTime returns a boolean if a field has been set.
-
-### GetCurrentProcessPersons
-
-`func (o *AgentTicketListV2ResponseDataDataInner) GetCurrentProcessPersons() []string`
-
-GetCurrentProcessPersons returns the CurrentProcessPersons field if non-nil, zero value otherwise.
-
-### GetCurrentProcessPersonsOk
-
-`func (o *AgentTicketListV2ResponseDataDataInner) GetCurrentProcessPersonsOk() (*[]string, bool)`
-
-GetCurrentProcessPersonsOk returns a tuple with the CurrentProcessPersons field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCurrentProcessPersons
-
-`func (o *AgentTicketListV2ResponseDataDataInner) SetCurrentProcessPersons(v []string)`
-
-SetCurrentProcessPersons sets CurrentProcessPersons field to given value.
-
-### HasCurrentProcessPersons
-
-`func (o *AgentTicketListV2ResponseDataDataInner) HasCurrentProcessPersons() bool`
-
-HasCurrentProcessPersons returns a boolean if a field has been set.
 
 ### GetTaskName
 
@@ -500,31 +470,6 @@ SetSalesDepName sets SalesDepName field to given value.
 
 HasSalesDepName returns a boolean if a field has been set.
 
-### GetProcessPersons
-
-`func (o *AgentTicketListV2ResponseDataDataInner) GetProcessPersons() []string`
-
-GetProcessPersons returns the ProcessPersons field if non-nil, zero value otherwise.
-
-### GetProcessPersonsOk
-
-`func (o *AgentTicketListV2ResponseDataDataInner) GetProcessPersonsOk() (*[]string, bool)`
-
-GetProcessPersonsOk returns a tuple with the ProcessPersons field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProcessPersons
-
-`func (o *AgentTicketListV2ResponseDataDataInner) SetProcessPersons(v []string)`
-
-SetProcessPersons sets ProcessPersons field to given value.
-
-### HasProcessPersons
-
-`func (o *AgentTicketListV2ResponseDataDataInner) HasProcessPersons() bool`
-
-HasProcessPersons returns a boolean if a field has been set.
-
 ### GetTicketStatusName
 
 `func (o *AgentTicketListV2ResponseDataDataInner) GetTicketStatusName() string`
@@ -599,81 +544,6 @@ SetAgentSalesId sets AgentSalesId field to given value.
 `func (o *AgentTicketListV2ResponseDataDataInner) HasAgentSalesId() bool`
 
 HasAgentSalesId returns a boolean if a field has been set.
-
-### GetAgentSalesName
-
-`func (o *AgentTicketListV2ResponseDataDataInner) GetAgentSalesName() string`
-
-GetAgentSalesName returns the AgentSalesName field if non-nil, zero value otherwise.
-
-### GetAgentSalesNameOk
-
-`func (o *AgentTicketListV2ResponseDataDataInner) GetAgentSalesNameOk() (*string, bool)`
-
-GetAgentSalesNameOk returns a tuple with the AgentSalesName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAgentSalesName
-
-`func (o *AgentTicketListV2ResponseDataDataInner) SetAgentSalesName(v string)`
-
-SetAgentSalesName sets AgentSalesName field to given value.
-
-### HasAgentSalesName
-
-`func (o *AgentTicketListV2ResponseDataDataInner) HasAgentSalesName() bool`
-
-HasAgentSalesName returns a boolean if a field has been set.
-
-### GetOptimizerId
-
-`func (o *AgentTicketListV2ResponseDataDataInner) GetOptimizerId() int64`
-
-GetOptimizerId returns the OptimizerId field if non-nil, zero value otherwise.
-
-### GetOptimizerIdOk
-
-`func (o *AgentTicketListV2ResponseDataDataInner) GetOptimizerIdOk() (*int64, bool)`
-
-GetOptimizerIdOk returns a tuple with the OptimizerId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOptimizerId
-
-`func (o *AgentTicketListV2ResponseDataDataInner) SetOptimizerId(v int64)`
-
-SetOptimizerId sets OptimizerId field to given value.
-
-### HasOptimizerId
-
-`func (o *AgentTicketListV2ResponseDataDataInner) HasOptimizerId() bool`
-
-HasOptimizerId returns a boolean if a field has been set.
-
-### GetOptimizerName
-
-`func (o *AgentTicketListV2ResponseDataDataInner) GetOptimizerName() string`
-
-GetOptimizerName returns the OptimizerName field if non-nil, zero value otherwise.
-
-### GetOptimizerNameOk
-
-`func (o *AgentTicketListV2ResponseDataDataInner) GetOptimizerNameOk() (*string, bool)`
-
-GetOptimizerNameOk returns a tuple with the OptimizerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOptimizerName
-
-`func (o *AgentTicketListV2ResponseDataDataInner) SetOptimizerName(v string)`
-
-SetOptimizerName sets OptimizerName field to given value.
-
-### HasOptimizerName
-
-`func (o *AgentTicketListV2ResponseDataDataInner) HasOptimizerName() bool`
-
-HasOptimizerName returns a boolean if a field has been set.
 
 ### GetAthenaOrderId
 
