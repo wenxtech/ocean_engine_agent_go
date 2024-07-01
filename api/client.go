@@ -18,10 +18,8 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"log"
 	"mime/multipart"
 	"net/http"
-	"net/http/httputil"
 	"net/url"
 	"os"
 	"path/filepath"
@@ -253,32 +251,21 @@ func (c *APIClient) Use(mws ...Middleware) {
 }
 
 // callAPI do the request.
-func (c *APIClient) callAPI(request *http.Request) (*http.Response, error) {
-	if c.Cfg.Debug {
-		dump, err := httputil.DumpRequestOut(request, true)
-		if err != nil {
-			return nil, err
-		}
-		log.Printf("\n%s\n", string(dump))
+func (c *APIClient) callAPI(ctx context.Context, request *http.Request) (*http.Response, error) {
+	if c.mws != nil {
+		return c.mws(c.do)(ctx, request)
 	}
+	return c.do(ctx, request)
+}
 
-	resp, err := c.Cfg.HTTPClient.Do(request)
-	if err != nil {
-		return resp, err
-	}
-
-	if c.Cfg.Debug {
-		dump, err := httputil.DumpResponse(resp, true)
-		if err != nil {
-			return resp, err
-		}
-		log.Printf("\n%s\n", string(dump))
-	}
-	return resp, err
+func (c *APIClient) do(ctx context.Context, req *http.Request) (*http.Response, error) {
+	// add context to the request
+	req = req.WithContext(ctx)
+	return c.Cfg.HTTPClient.Do(req)
 }
 
 func (c *APIClient) prepareCtx(ctx context.Context) context.Context {
-	if c.Cfg.LogEnable {
+	if c.Cfg.Debug {
 		ctx = context.WithValue(ctx, ContextEnableLog, true)
 	}
 	return ctx

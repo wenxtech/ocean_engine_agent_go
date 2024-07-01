@@ -28,10 +28,10 @@ type ApiAgentTicketListV2PostRequest struct {
 	ApiService *AgentTicketListV2APIService
 	page *int64
 	ticketApp *string
-	createTimeStart *string
-	createTimeEnd *string
 	size *int64
 	ticketTabType *string
+	createTimeStart *string
+	createTimeEnd *string
 	ticketStatus *string
 }
 
@@ -45,16 +45,6 @@ func (r ApiAgentTicketListV2PostRequest) TicketApp(ticketApp string) ApiAgentTic
 	return r
 }
 
-func (r ApiAgentTicketListV2PostRequest) CreateTimeStart(createTimeStart string) ApiAgentTicketListV2PostRequest {
-	r.createTimeStart = &createTimeStart
-	return r
-}
-
-func (r ApiAgentTicketListV2PostRequest) CreateTimeEnd(createTimeEnd string) ApiAgentTicketListV2PostRequest {
-	r.createTimeEnd = &createTimeEnd
-	return r
-}
-
 func (r ApiAgentTicketListV2PostRequest) Size(size int64) ApiAgentTicketListV2PostRequest {
 	r.size = &size
 	return r
@@ -65,6 +55,16 @@ func (r ApiAgentTicketListV2PostRequest) TicketTabType(ticketTabType string) Api
 	return r
 }
 
+func (r ApiAgentTicketListV2PostRequest) CreateTimeStart(createTimeStart string) ApiAgentTicketListV2PostRequest {
+	r.createTimeStart = &createTimeStart
+	return r
+}
+
+func (r ApiAgentTicketListV2PostRequest) CreateTimeEnd(createTimeEnd string) ApiAgentTicketListV2PostRequest {
+	r.createTimeEnd = &createTimeEnd
+	return r
+}
+
 func (r ApiAgentTicketListV2PostRequest) TicketStatus(ticketStatus string) ApiAgentTicketListV2PostRequest {
 	r.ticketStatus = &ticketStatus
 	return r
@@ -72,6 +72,13 @@ func (r ApiAgentTicketListV2PostRequest) TicketStatus(ticketStatus string) ApiAg
 
 func (r ApiAgentTicketListV2PostRequest) Execute() (*AgentTicketListV2Response, *http.Response, error) {
 	return r.ApiService.AgentTicketListV2PostExecute(r)
+}
+
+func (r ApiAgentTicketListV2PostRequest) WithLog(enable bool) ApiAgentTicketListV2PostRequest {
+	if enable {
+		r.ctx = context.WithValue(r.ctx, ContextEnableLog, true)
+	}
+	return r
 }
 
 /*
@@ -111,6 +118,18 @@ func (a *AgentTicketListV2APIService) AgentTicketListV2PostExecute(r ApiAgentTic
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.ticketApp == nil {
+		return localVarReturnValue, nil, reportError("ticketApp is required and must be specified")
+	}
+	if r.size == nil {
+		return localVarReturnValue, nil, reportError("size is required and must be specified")
+	}
+	if r.ticketTabType == nil {
+		return localVarReturnValue, nil, reportError("ticketTabType is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"multipart/form-data"}
@@ -129,24 +148,16 @@ func (a *AgentTicketListV2APIService) AgentTicketListV2PostExecute(r ApiAgentTic
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "page", r.page, "")
-	}
-	if r.ticketApp != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "ticketApp", r.ticketApp, "")
-	}
+	parameterAddToHeaderOrQuery(localVarFormParams, "page", r.page, "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "ticketApp", r.ticketApp, "")
 	if r.createTimeStart != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "createTimeStart", r.createTimeStart, "")
 	}
 	if r.createTimeEnd != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "createTimeEnd", r.createTimeEnd, "")
 	}
-	if r.size != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "size", r.size, "")
-	}
-	if r.ticketTabType != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "ticketTabType", r.ticketTabType, "")
-	}
+	parameterAddToHeaderOrQuery(localVarFormParams, "size", r.size, "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "ticketTabType", r.ticketTabType, "")
 	if r.ticketStatus != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "ticketStatus", r.ticketStatus, "")
 	}
@@ -155,7 +166,7 @@ func (a *AgentTicketListV2APIService) AgentTicketListV2PostExecute(r ApiAgentTic
 		return localVarReturnValue, nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.callAPI(r.ctx, req)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -26,10 +26,8 @@ func Init(cfg *api.Configuration) *Client {
 	client.ApiClient.Use(
 		middleware.AuthMiddleware,
 		middleware.HeaderMiddleware,
+		middleware.LogMiddleware,
 	)
-	if cfg.UseLogMw {
-		client.ApiClient.Use(middleware.LogMiddleware)
-	}
 	return client
 }
 // API Services
@@ -56,6 +54,6 @@ func (c *Client) AddDefaultHeader(key string, value string) {
 	c.ApiClient.Cfg.AddDefaultHeader(key, value)
 }
 
-func (c *Client) SetLogEnable(enable bool) {
-	c.ApiClient.Cfg.LogEnable = enable
+func (c *Client) SetDebug(enable bool) {
+	c.ApiClient.Cfg.Debug = enable
 }

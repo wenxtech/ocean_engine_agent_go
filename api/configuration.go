@@ -86,8 +86,6 @@ type Configuration struct {
 	Debug            bool              `json:"debug,omitempty"`
 	Servers          ServerConfigurations
 	OperationServers map[string]ServerConfigurations
-	LogEnable        bool              `json:"log_enable,omitempty"`
-	UseLogMw         bool              `json:"use_log_mw,omitempty"`
 	HTTPClient       *http.Client
 }
 

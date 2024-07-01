@@ -32,6 +32,13 @@ func (r ApiCgCsrfTokenGetRequest) Execute() (*CgCsrfTokenResponse, *http.Respons
 	return r.ApiService.CgCsrfTokenGetExecute(r)
 }
 
+func (r ApiCgCsrfTokenGetRequest) WithLog(enable bool) ApiCgCsrfTokenGetRequest {
+	if enable {
+		r.ctx = context.WithValue(r.ctx, ContextEnableLog, true)
+	}
+	return r
+}
+
 /*
 CgCsrfTokenGet 获取CgCsrfToken
 
@@ -92,7 +99,7 @@ func (a *CgCsrfTokenAPIService) CgCsrfTokenGetExecute(r ApiCgCsrfTokenGetRequest
 		return localVarReturnValue, nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.callAPI(r.ctx, req)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
