@@ -20,12 +20,12 @@ import (
 )
 
 
-// AgentTicketListV2APIService AgentTicketListV2API service
-type AgentTicketListV2APIService service
+// TicketListV2APIService TicketListV2API service
+type TicketListV2APIService service
 
-type ApiAgentTicketListV2PostRequest struct {
+type ApiTicketListV2PostRequest struct {
 	ctx context.Context
-	ApiService *AgentTicketListV2APIService
+	ApiService *TicketListV2APIService
 	page *int64
 	ticketApp *string
 	size *int64
@@ -35,46 +35,46 @@ type ApiAgentTicketListV2PostRequest struct {
 	ticketStatus *string
 }
 
-func (r ApiAgentTicketListV2PostRequest) Page(page int64) ApiAgentTicketListV2PostRequest {
+func (r *ApiTicketListV2PostRequest) Page(page int64) *ApiTicketListV2PostRequest {
 	r.page = &page
 	return r
 }
 
-func (r ApiAgentTicketListV2PostRequest) TicketApp(ticketApp string) ApiAgentTicketListV2PostRequest {
+func (r *ApiTicketListV2PostRequest) TicketApp(ticketApp string) *ApiTicketListV2PostRequest {
 	r.ticketApp = &ticketApp
 	return r
 }
 
-func (r ApiAgentTicketListV2PostRequest) Size(size int64) ApiAgentTicketListV2PostRequest {
+func (r *ApiTicketListV2PostRequest) Size(size int64) *ApiTicketListV2PostRequest {
 	r.size = &size
 	return r
 }
 
-func (r ApiAgentTicketListV2PostRequest) TicketTabType(ticketTabType string) ApiAgentTicketListV2PostRequest {
+func (r *ApiTicketListV2PostRequest) TicketTabType(ticketTabType string) *ApiTicketListV2PostRequest {
 	r.ticketTabType = &ticketTabType
 	return r
 }
 
-func (r ApiAgentTicketListV2PostRequest) CreateTimeStart(createTimeStart string) ApiAgentTicketListV2PostRequest {
+func (r *ApiTicketListV2PostRequest) CreateTimeStart(createTimeStart string) *ApiTicketListV2PostRequest {
 	r.createTimeStart = &createTimeStart
 	return r
 }
 
-func (r ApiAgentTicketListV2PostRequest) CreateTimeEnd(createTimeEnd string) ApiAgentTicketListV2PostRequest {
+func (r *ApiTicketListV2PostRequest) CreateTimeEnd(createTimeEnd string) *ApiTicketListV2PostRequest {
 	r.createTimeEnd = &createTimeEnd
 	return r
 }
 
-func (r ApiAgentTicketListV2PostRequest) TicketStatus(ticketStatus string) ApiAgentTicketListV2PostRequest {
+func (r *ApiTicketListV2PostRequest) TicketStatus(ticketStatus string) *ApiTicketListV2PostRequest {
 	r.ticketStatus = &ticketStatus
 	return r
 }
 
-func (r ApiAgentTicketListV2PostRequest) Execute() (*AgentTicketListV2Response, *http.Response, error) {
-	return r.ApiService.AgentTicketListV2PostExecute(r)
+func (r *ApiTicketListV2PostRequest) Execute() (*TicketListV2Response, *http.Response, error) {
+	return r.ApiService.buildExecute(r)
 }
 
-func (r ApiAgentTicketListV2PostRequest) WithLog(enable bool) ApiAgentTicketListV2PostRequest {
+func (r *ApiTicketListV2PostRequest) WithLog(enable bool) *ApiTicketListV2PostRequest {
 	if enable {
 		r.ctx = context.WithValue(r.ctx, ContextEnableLog, true)
 	}
@@ -82,38 +82,38 @@ func (r ApiAgentTicketListV2PostRequest) WithLog(enable bool) ApiAgentTicketList
 }
 
 /*
-AgentTicketListV2Post 工单列表
+TicketListV2Post 工单列表
 
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAgentTicketListV2PostRequest
+ @return ApiTicketListV2PostRequest
 */
-func (a *AgentTicketListV2APIService) Post(ctx context.Context) ApiAgentTicketListV2PostRequest {
-	return ApiAgentTicketListV2PostRequest{
+func (a *TicketListV2APIService) Post(ctx context.Context) ApiTicketListV2PostRequest {
+	return ApiTicketListV2PostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AgentTicketListV2Response
-func (a *AgentTicketListV2APIService) AgentTicketListV2PostExecute(r ApiAgentTicketListV2PostRequest) (*AgentTicketListV2Response, *http.Response, error) {
+//  @return TicketListV2Response
+func (a *TicketListV2APIService) buildExecute(r *ApiTicketListV2PostRequest) (*TicketListV2Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []FormFile
-		localVarReturnValue  *AgentTicketListV2Response
+		localVarReturnValue  *TicketListV2Response
 	)
 	
 	r.ctx = a.client.prepareCtx(r.ctx)
 
-	localBasePath, err := a.client.Cfg.ServerURLWithContext(r.ctx, "AgentTicketListV2APIService.AgentTicketListV2Post")
+	localBasePath, err := a.client.Cfg.ServerURLWithContext(r.ctx, "TicketListV2APIService.TicketListV2Post")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/agent/ticket/list/V2"
+	localVarPath := localBasePath + "/ticket/list/V2"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -18,8 +18,8 @@ type TicketApp string
 
 // List of ticketApp
 const (
-	DOU_TicketApp = "TICKET_APPLICATION_DOU"
-	AGENT_TicketApp = "TICKET_APPLICATION_AGENT"
+	TicketApp_DOU = "TICKET_APPLICATION_DOU"
+	TicketApp_AGENT = "TICKET_APPLICATION_AGENT"
 )
 
 // All allowed values of TicketApp enum

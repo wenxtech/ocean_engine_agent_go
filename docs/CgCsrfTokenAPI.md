@@ -1,6 +1,6 @@
 # \CgCsrfTokenAPI
 
-All URIs are relative to *https://agent.oceanengine.com*
+All URIs are relative to *https://agent.oceanengine.com/agent*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

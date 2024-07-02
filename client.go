@@ -31,11 +31,11 @@ func Init(cfg *api.Configuration) *Client {
 	return client
 }
 // API Services
-func (c *Client) AgentTicketListV2API() *api.AgentTicketListV2APIService {
-	return c.ApiClient.AgentTicketListV2API
-}
 func (c *Client) CgCsrfTokenAPI() *api.CgCsrfTokenAPIService {
 	return c.ApiClient.CgCsrfTokenAPI
+}
+func (c *Client) TicketListV2API() *api.TicketListV2APIService {
+	return c.ApiClient.TicketListV2API
 }
 
 func (c *Client) CommonApi() *api.CommonApiService {

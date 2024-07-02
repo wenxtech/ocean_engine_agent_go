@@ -48,9 +48,9 @@ type APIClient struct {
     mws    Middleware
 	// API Services
 
-	AgentTicketListV2API *AgentTicketListV2APIService
-
 	CgCsrfTokenAPI *CgCsrfTokenAPIService
+
+	TicketListV2API *TicketListV2APIService
     CommonApi *CommonApiService
 }
 
@@ -70,8 +70,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.AgentTicketListV2API = (*AgentTicketListV2APIService)(&c.common)
 	c.CgCsrfTokenAPI = (*CgCsrfTokenAPIService)(&c.common)
+	c.TicketListV2API = (*TicketListV2APIService)(&c.common)
 	c.CommonApi = (*CommonApiService)(&c.common)
 
 	return c

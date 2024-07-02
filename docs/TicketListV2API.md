@@ -1,16 +1,16 @@
-# \AgentTicketListV2API
+# \TicketListV2API
 
-All URIs are relative to *https://agent.oceanengine.com*
+All URIs are relative to *https://agent.oceanengine.com/agent*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AgentTicketListV2Post**](AgentTicketListV2API.md#AgentTicketListV2Post) | **Post** /agent/ticket/list/V2 | 工单列表
+[**TicketListV2Post**](TicketListV2API.md#TicketListV2Post) | **Post** /ticket/list/V2 | 工单列表
 
 
 
-## AgentTicketListV2Post
+## TicketListV2Post
 
-> AgentTicketListV2Response AgentTicketListV2Post(ctx).Page(page).TicketApp(ticketApp).Size(size).TicketTabType(ticketTabType).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).TicketStatus(ticketStatus).Execute()
+> TicketListV2Response TicketListV2Post(ctx).Page(page).TicketApp(ticketApp).Size(size).TicketTabType(ticketTabType).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).TicketStatus(ticketStatus).Execute()
 
 工单列表
 
@@ -39,13 +39,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AgentTicketListV2API.AgentTicketListV2Post(context.Background()).Page(page).TicketApp(ticketApp).Size(size).TicketTabType(ticketTabType).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).TicketStatus(ticketStatus).Execute()
+	resp, r, err := apiClient.TicketListV2API.TicketListV2Post(context.Background()).Page(page).TicketApp(ticketApp).Size(size).TicketTabType(ticketTabType).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).TicketStatus(ticketStatus).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AgentTicketListV2API.AgentTicketListV2Post``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TicketListV2API.TicketListV2Post``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AgentTicketListV2Post`: AgentTicketListV2Response
-	fmt.Fprintf(os.Stdout, "Response from `AgentTicketListV2API.AgentTicketListV2Post`: %v\n", resp)
+	// response from `TicketListV2Post`: TicketListV2Response
+	fmt.Fprintf(os.Stdout, "Response from `TicketListV2API.TicketListV2Post`: %v\n", resp)
 }
 ```
 
@@ -55,7 +55,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAgentTicketListV2PostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTicketListV2PostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AgentTicketListV2Response**](AgentTicketListV2Response.md)
+[**TicketListV2Response**](TicketListV2Response.md)
 
 ### Authorization
 

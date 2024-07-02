@@ -97,11 +97,17 @@ func NewConfiguration() *Configuration {
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
-				URL: "https://agent.oceanengine.com",
+				URL: "https://agent.oceanengine.com/agent",
 				Description: "正式环境",
 			},
 		},
 		OperationServers: map[string]ServerConfigurations{
+			"CgCsrfTokenAPIService.CgCsrfTokenGet": {
+				{
+					URL: "https://agent.oceanengine.com",
+					Description: "No description provided",
+				},
+			},
 		},
 	}
 	return cfg

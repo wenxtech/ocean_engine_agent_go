@@ -28,11 +28,11 @@ type ApiCgCsrfTokenGetRequest struct {
 	ApiService *CgCsrfTokenAPIService
 }
 
-func (r ApiCgCsrfTokenGetRequest) Execute() (*CgCsrfTokenResponse, *http.Response, error) {
-	return r.ApiService.CgCsrfTokenGetExecute(r)
+func (r *ApiCgCsrfTokenGetRequest) Execute() (*CgCsrfTokenResponse, *http.Response, error) {
+	return r.ApiService.buildExecute(r)
 }
 
-func (r ApiCgCsrfTokenGetRequest) WithLog(enable bool) ApiCgCsrfTokenGetRequest {
+func (r *ApiCgCsrfTokenGetRequest) WithLog(enable bool) *ApiCgCsrfTokenGetRequest {
 	if enable {
 		r.ctx = context.WithValue(r.ctx, ContextEnableLog, true)
 	}
@@ -56,7 +56,7 @@ func (a *CgCsrfTokenAPIService) Get(ctx context.Context) ApiCgCsrfTokenGetReques
 
 // Execute executes the request
 //  @return CgCsrfTokenResponse
-func (a *CgCsrfTokenAPIService) CgCsrfTokenGetExecute(r ApiCgCsrfTokenGetRequest) (*CgCsrfTokenResponse, *http.Response, error) {
+func (a *CgCsrfTokenAPIService) buildExecute(r *ApiCgCsrfTokenGetRequest) (*CgCsrfTokenResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

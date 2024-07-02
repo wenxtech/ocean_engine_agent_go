@@ -10,11 +10,10 @@ API version: 1.0.0
 
 package models
 
-// AgentTicketListV2Response struct for AgentTicketListV2Response
-type AgentTicketListV2Response struct {
-	Code *int64 `json:"code,omitempty"`
-	Msg *string `json:"msg,omitempty"`
-	Data *AgentTicketListV2ResponseData `json:"data,omitempty"`
+// TicketListV2ResponseData struct for TicketListV2ResponseData
+type TicketListV2ResponseData struct {
+	Total *int64 `json:"total,omitempty"`
+	Data []TicketListV2ResponseDataDataInner `json:"data,omitempty"`
 }
 
 

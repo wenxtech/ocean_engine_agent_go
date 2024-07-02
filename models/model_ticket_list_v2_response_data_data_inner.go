@@ -10,8 +10,8 @@ API version: 1.0.0
 
 package models
 
-// AgentTicketListV2ResponseDataDataInner struct for AgentTicketListV2ResponseDataDataInner
-type AgentTicketListV2ResponseDataDataInner struct {
+// TicketListV2ResponseDataDataInner struct for TicketListV2ResponseDataDataInner
+type TicketListV2ResponseDataDataInner struct {
 	TicketId *int64 `json:"ticketId,omitempty"`
 	TicketSubject *string `json:"ticketSubject,omitempty"`
 	TicketStatus *string `json:"ticketStatus,omitempty"`
